@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class UserProfile(AbstractUser):
-    name = models.CharField(max_length=50, verbose_name=u"权利人名称", default="")
+    name = models.CharField(max_length=50, verbose_name=u"权利人名称")
     card = models.CharField(max_length=100, verbose_name=u"证件号码")
     locate = models.CharField(max_length=100, verbose_name=u"不动产坐落")
     estate_num = models.CharField(max_length=100, verbose_name=u"不动产单元号")

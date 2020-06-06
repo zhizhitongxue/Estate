@@ -12,10 +12,13 @@ class UserInquireView(GenericAPIView):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             ID = serializer.validated_data.get('ID')
-            user = UserProfile.objects.get(card=ID)
-            infos = {'name': user.name, 'ID': user.card, 'locate': user.locate, 'estate_num': user.estate_num,
+            users = UserProfile.objects.filter(card=ID)
+            data = []
+            for user in users:
+                infos = {'name': user.name, 'ID': user.card, 'locate': user.locate, 'estate_num': user.estate_num,
                      'estate_card': user.estate_card, 'type': user.type, 'area': user.area, 'use': user.use,
                      'status': user.status}
-            return JsonResponse(data=infos)
+                data.append(infos)
+            return JsonResponse(data=data)
         else:
             raise Exception
