@@ -25,8 +25,8 @@ SECRET_KEY = 'pez0i9xitj(%$r1en_k=(*-_%4quytm2(ge*e*$bf^cd@pyvda'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['zhix.tosone.cn']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['zhix.tosone.cn']
+# ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'users.UserProfile'
 
