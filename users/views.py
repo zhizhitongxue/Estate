@@ -21,4 +21,4 @@ class UserInquireView(GenericAPIView):
                 data.append(infos)
             return JsonResponse(data=data)
         else:
-            raise Exception
+            return JsonResponse()
