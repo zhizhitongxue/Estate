@@ -25,7 +25,10 @@ SECRET_KEY = 'pez0i9xitj(%$r1en_k=(*-_%4quytm2(ge*e*$bf^cd@pyvda'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zhix.tosone.cn']
+# ALLOWED_HOSTS = ['zhix.tosone.cn']
+ALLOWED_HOSTS = ['*']
+
+AUTH_USER_MODEL = 'users.UserProfile'
 
 
 # Application definition
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -76,10 +80,10 @@ WSGI_APPLICATION = 'Estate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database',
-        'USER': 'tosone',
+        'NAME': 'estatedb',
+        'USER': 'root',
+        'PASSWORD': '8541539655',
         'HOST': 'mysql.tosone.cn',
-        'PASSWORD': '8541539655'
     }
 }
 
@@ -106,15 +110,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
