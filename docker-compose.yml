@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  zhix:
+    image: zhix:dev
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - default
+    labels:
+      - traefik.http.routers.zhix.rule=Host(`zhix${HOST_DOMAIN}`)
+      - traefik.http.routers.zhix.entrypoints=websecure
+      - traefik.http.routers.zhix.tls=true
+      - traefik.http.routers.zhix.tls.certresolver=leresolver
+      - traefik.http.services=zhix
+      - traefik.http.services.zhix.loadbalancer.server.port=8000
+networks:
+  default:
+    external:
+      name: ${DOCKER_NETWORK:-webproxy}
