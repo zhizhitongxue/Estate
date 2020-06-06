@@ -17,6 +17,5 @@ class UserInquireView(GenericAPIView):
                      'estate_card': user.estate_card, 'type': user.type, 'area': user.area, 'use': user.use,
                      'status': user.status}
             return JsonResponse(data=infos)
-            # print(infos)
         else:
             raise Exception
