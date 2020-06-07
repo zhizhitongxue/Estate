@@ -15,10 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
+from django.conf.urls.static import static
+from django.conf import settings
+from django.urls import path, include
 
 from users.views import UserInquireView
+from django.views.generic.base import TemplateView
+
+from . import views
 
 urlpatterns = [
+    # path(r'^.*?$', views.index),
+    url(r'^$', TemplateView.as_view(template_name='index.html'), name="home"),
     url('admin/', admin.site.urls),
     url('^inquire/$', UserInquireView.as_view(), name="inquire"),
 ]
+
+# urlpatterns += patterns(
+#     'django.contrib.staticfiles.views',
+#     url(r'^(?:index.html)?$', 'serve', kwargs={'path': 'index.html'}),
+#     url(r'^(?P<path>(?:js|css|img)/.*)$', 'serve'),
+# )

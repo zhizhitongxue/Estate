@@ -1,20 +1,6 @@
 version: "3"
 
 services:
-  fe:
-    image: halverneus/static-file-server:latest
-    restart: always
-    volumes:
-      - $PWD/dist:/content
-    environment:
-      - FOLDER=/content
-    labels:
-      - traefik.http.routers.fe.rule=Host(`fezhix${HOST_DOMAIN}`)
-      - traefik.http.routers.fe.entrypoints=websecure
-      - traefik.http.routers.fe.tls=true
-      - traefik.http.routers.fe.tls.certresolver=leresolver
-      - traefik.http.services=fe
-      - traefik.http.services.fe.loadbalancer.server.port=8080
   zhix:
     image: zhix:dev
     restart: always
