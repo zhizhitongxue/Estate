@@ -84,11 +84,8 @@ WSGI_APPLICATION = 'Estate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'estatedb',
-        'USER': 'root',
-        'PASSWORD': '8541539655',
-        'HOST': 'mysql.tosone.cn',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database'
     }
 }
 
