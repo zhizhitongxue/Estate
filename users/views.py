@@ -8,7 +8,7 @@ from users.models import UserProfile
 class UserInquireView(GenericAPIView):
     serializer_class = IDSerializer
 
-    def get(self, request):
+    def post(self, request):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             ID = serializer.validated_data.get('ID')
