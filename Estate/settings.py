@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Estate.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'database'
+        'NAME': 'database.sqlite3'
     }
 }
 

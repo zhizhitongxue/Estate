@@ -22,7 +22,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - $PWD/volumes/database.sqlite3:/root/database.sqlite3
+      - $PWD/database.sqlite3:/root/database.sqlite3
     networks:
       - default
     labels:
