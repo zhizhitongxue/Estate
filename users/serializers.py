@@ -7,4 +7,5 @@ from django.contrib.auth import get_user_model
 
 
 class IDSerializer(serializers.Serializer):
-    ID = serializers.CharField(max_length=20, help_text='证件号码')
+    # ID = serializers.CharField(max_length=20, help_text='证件号码')
+    pass
